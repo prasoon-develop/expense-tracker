@@ -1,0 +1,224 @@
+/* Custom CSS Variables for Premium Theme UI */
+:root {
+    --bg-color: #f7f9fc;
+    --card-bg: #ffffff;
+    --text-main: #2d3748;
+    --text-muted: #718096;
+    --income-green: #2ecc71;
+    --expense-red: #e74c3c;
+    --primary-blue: #3498db;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+header .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #edf2f7;
+    padding-bottom: 8px;
+    color: #4a5568;
+}
+
+/* Balance Dashboard Card Design */
+.balance-card {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.balance-card h3 {
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+#total-balance {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.stat-box {
+    flex: 1;
+    text-align: center;
+}
+
+.stat-box:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-box span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.stat-box h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.income h4 { color: var(--income-green); }
+.expense h4 { color: #ff7675; }
+
+/* Transaction Form Elements */
+.transaction-form {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #4a5568;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-blue);
+}
+
+.btn {
+    width: 100%;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Custom Safe Button for Manual Persistence */
+.btn-save {
+    background-color: #27ae60;
+    margin-top: 10px;
+}
+
+.btn-save:hover {
+    background-color: #219653;
+}
+
+/* History List Layout */
+.list {
+    list-style-type: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.list li {
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    color: var(--text-main);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #edf2f7;
+    font-size: 14px;
+    align-items: center;
+}
+
+.list li.plus {
+    border-right: 5px solid var(--income-green);
+}
+
+.list li.minus {
+    border-right: 5px solid var(--expense-red);
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: var(--expense-red);
+    border: none;
+    color: white;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
